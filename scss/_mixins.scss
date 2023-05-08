@@ -1,0 +1,105 @@
+
+@mixin firstPadding{
+    padding: 8% 5% 5% 5%;
+    @include mediaQuery(576px){
+        padding: 8% 3% 5% 3%;
+    }
+    @include mediaQuery(768px, 577px){
+        padding: 8% 2% 5% 2%;
+    }
+    @include mediaQuery(1024px, 769px){
+        padding: 8% 2% 5% 2%;
+    }
+}
+@mixin secondPadding{
+    padding: 8% 6% 8% 6%;
+    @include mediaQuery(576px){
+        padding: 8% 3% 8% 3%;
+    }
+    @include mediaQuery(768px, 577px){
+        padding: 8% 2% 5% 2%;
+    }
+    @include mediaQuery(1024px, 769px){
+        padding: 8% 2% 5% 2%;
+    }
+}
+@mixin pText{
+    font-size: 16px;
+    font-family: 'balooregular';
+}
+@mixin H3{
+    font-size: 45px;
+    font-family: 'balooregular';
+    @include mediaQuery(576px){
+        font-size: 30px
+    }
+    @include mediaQuery(768px, 577px){
+        font-size: 35px
+    }
+}
+@mixin cards{
+    padding: 2% 2% 2% 2%;
+    background-color: rgb(0, 61, 84);
+    img{
+        width: 100%;
+        height: 200px;
+    }
+    h5{
+        color:rgb(214, 122, 64);
+        font-family: 'balooregular';
+        margin: 3% 0% 3% 0%;
+    }
+    #cardsOrangeLine{
+        width: 90%;
+        height: 3px;
+        margin-bottom: 3%;
+        background-color:rgb(214, 122, 64);
+    }
+    p{
+        width: 90%;
+        color: white;
+        font-family: 'balooregular';
+    }
+}
+@mixin formInputs{
+    margin-bottom: 2%;
+    border: none;
+    @include mediaQuery(576px){
+        margin-bottom: 3%;
+    }
+    @include mediaQuery(768px, 577px){
+        margin-bottom: 3%;
+    }
+    @include mediaQuery(1024px, 769px){
+        margin-bottom: 3%;
+    }
+}
+
+@mixin buttons{
+    height: 60px;
+    background-color: rgb(0, 56, 79);
+    color: white;
+    font-size: 21px;
+    padding: 3% 7% 3% 7%;
+    border: none;
+    font-family: 'balooregular';
+}
+
+@mixin centeringText{
+    @include mediaQuery(576px){
+        text-align: center;
+    }
+}
+
+@mixin mediaQuery($breakpoint...){
+    @if length($breakpoint) == 1 {
+        @media (max-width: nth($breakpoint, 1)){
+            @content;
+        }
+    }
+    @if length($breakpoint) == 2{
+        @media (max-width: nth($breakpoint, 1)) and (min-width: nth($breakpoint, 2)){
+            @content;
+        }
+    }
+}

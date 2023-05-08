@@ -1,0 +1,805 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  padding: 2% 3% 2% 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #navbar {
+    padding: 2% 3% 2% 3%;
+  }
+}
+@media (max-width: 576px) {
+  #navbar img {
+    width: 180px;
+    height: 90px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #navbar img {
+    width: 250px;
+    height: 140px;
+  }
+}
+#navbar ul {
+  display: flex;
+}
+@media (max-width: 576px) {
+  #navbar ul {
+    display: none;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #navbar ul {
+    display: none;
+  }
+}
+#navbar ul li {
+  list-style: none;
+}
+#navbar ul li:hover {
+  background-color: rgb(0, 49, 66);
+  border-radius: 30px;
+}
+#navbar ul li a {
+  text-decoration: none;
+  display: block;
+  padding: 40px;
+  font-family: "balooregular";
+  font-size: 30px;
+  color: rgb(0, 49, 66);
+}
+#navbar ul li a:hover {
+  color: rgb(214, 122, 64);
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #navbar ul li a {
+    padding: 25px;
+  }
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  overflow-y: auto;
+  transition: 0.5s;
+}
+.overlay .closebtn {
+  position: absolute;
+  font-size: 40px;
+  right: 35px;
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  .overlay .closebtn {
+    font-size: 90px;
+  }
+}
+.overlay li {
+  list-style: none;
+}
+.overlay li:hover {
+  background-color: rgb(0, 49, 66);
+  border-radius: 30px;
+  margin: 20px;
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  .overlay li:hover {
+    margin-left: 120px;
+    margin-right: 120px;
+    border-radius: 50px;
+  }
+}
+.overlay a {
+  padding: 10px;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: "balooregular";
+  color: rgb(0, 49, 66);
+  display: block;
+  transition: 0.9s;
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  .overlay a {
+    padding: 20px;
+    font-size: 60px;
+  }
+}
+.overlay a:hover {
+  color: rgb(214, 122, 64);
+}
+.overlay .overlay-content {
+  position: relative;
+  top: 25%;
+  text-align: center;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 38px;
+  right: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+}
+@media (max-width: 576px) {
+  .toggle-button {
+    display: flex;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  .toggle-button {
+    top: 65px;
+    right: 70px;
+    display: flex;
+    width: 60px;
+    height: 40px;
+  }
+}
+.toggle-button .bar {
+  height: 5px;
+  width: 100%;
+  background-color: rgb(0, 49, 66);
+  border-radius: 12px;
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  .toggle-button .bar {
+    height: 7px;
+  }
+}
+
+#bilboardSection {
+  padding: 2% 5% 0% 5%;
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #bilboardSection {
+    padding: 2% 2% 5% 2%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #bilboardSection {
+    padding: 2% 2% 0% 2%;
+  }
+}
+@media (max-width: 576px) {
+  #bilboardSection #bilboardTextContainer {
+    text-align: center;
+  }
+}
+#bilboardSection #bilboardTextContainer h1 {
+  color: rgb(0, 49, 66);
+  font-size: 90px;
+  font-family: "balooregular";
+}
+@media (max-width: 576px) {
+  #bilboardSection #bilboardTextContainer h1 {
+    font-size: 60px;
+    display: none;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #bilboardSection #bilboardTextContainer h1 {
+    display: none;
+  }
+}
+#bilboardSection #bilboardTextContainer h2 {
+  color: rgb(0, 49, 66);
+  font-size: 50px;
+  font-family: "balooregular";
+}
+@media (max-width: 576px) {
+  #bilboardSection #bilboardTextContainer h2 {
+    font-size: 40px;
+  }
+}
+#bilboardSection #bilboardTextContainer h2 span {
+  color: rgb(214, 122, 64);
+  font-size: 65px;
+}
+@media (max-width: 576px) {
+  #bilboardSection #bilboardTextContainer h2 span {
+    font-size: 50px;
+  }
+}
+#bilboardSection #bilboardTextContainer #orangeLineAndText {
+  display: flex;
+}
+#bilboardSection #bilboardTextContainer #orangeLineAndText #bilboardOrangeLine {
+  width: 90px;
+  height: 3px;
+  background-color: rgb(214, 122, 64);
+  margin-top: 13px;
+  margin-right: 20px;
+}
+@media (max-width: 576px) {
+  #bilboardSection #bilboardTextContainer #orangeLineAndText #bilboardOrangeLine {
+    margin-left: 20px;
+  }
+}
+#bilboardSection #bilboardTextContainer #orangeLineAndText p {
+  font-size: 25px;
+  font-family: "balooregular";
+  color: rgb(0, 49, 66);
+}
+@media (max-width: 576px) {
+  #bilboardSection #bilboardTextContainer #orangeLineAndText p {
+    font-size: 17px;
+  }
+}
+#bilboardSection .row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+@media (max-width: 576px) {
+  #bilboardSection .row {
+    display: none;
+  }
+}
+#bilboardSection .row .column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #bilboardSection .row .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+#bilboardSection .row .column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+#bilboardSection #fadeImageContainer {
+  width: 100%;
+  display: flex;
+}
+@media (max-width: 576px) {
+  #bilboardSection #fadeImageContainer {
+    display: none;
+  }
+}
+#bilboardSection #fadeImageContainer .ImageContainers {
+  width: 25%;
+  height: auto;
+  margin-top: 8px;
+}
+#bilboardSection #fadeImageContainer .ImageContainers img {
+  width: 100%;
+}
+#bilboardSection .slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  display: none;
+}
+@media (max-width: 576px) {
+  #bilboardSection .slideshow-container {
+    display: contents;
+  }
+}
+#bilboardSection .slideshow-container .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+#bilboardSection .slideshow-container .fade img {
+  width: 100%;
+  height: 300px;
+}
+#bilboardSection .slideshow-container .fade .dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+#bilboardSection .slideshow-container .fade .dot.active {
+  background-color: #717171;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#passionDrivenSection {
+  padding: 2% 5% 5% 5%;
+}
+@media (max-width: 576px) {
+  #passionDrivenSection {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #passionDrivenSection {
+    padding: 2% 2% 5% 2%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #passionDrivenSection {
+    padding: 2% 2% 5% 2%;
+  }
+}
+#passionDrivenSection .textAndSpiralImage {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+}
+#passionDrivenSection .textAndSpiralImage h3 {
+  font-size: 45px;
+  font-family: "balooregular";
+  color: rgb(214, 122, 64);
+  width: 90%;
+}
+@media (max-width: 576px) {
+  #passionDrivenSection .textAndSpiralImage h3 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #passionDrivenSection .textAndSpiralImage h3 {
+    font-size: 35px;
+  }
+}
+#passionDrivenSection .textAndSpiralImage p {
+  font-size: 16px;
+  font-family: "balooregular";
+  width: 95%;
+}
+#passionDrivenSection .textAndSpiralImage #spiralImageContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+#passionDrivenSection .textAndSpiralImage #spiralImageContainer img {
+  width: 90%;
+  height: 500px;
+}
+@media (max-width: 576px) {
+  #passionDrivenSection .textAndSpiralImage #spiralImageContainer img {
+    height: 400px;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #passionDrivenSection .textAndSpiralImage #spiralImageContainer img {
+    width: 90%;
+    height: 380px;
+  }
+}
+
+#servicesSection {
+  background-color: rgb(0, 56, 79);
+  padding: 8% 5% 5% 5%;
+}
+@media (max-width: 576px) {
+  #servicesSection {
+    padding: 8% 3% 5% 3%;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #servicesSection {
+    padding: 8% 2% 5% 2%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #servicesSection {
+    padding: 8% 2% 5% 2%;
+  }
+}
+#servicesSection h3 {
+  font-size: 45px;
+  font-family: "balooregular";
+  width: 37%;
+  margin-bottom: 3%;
+  color: white;
+}
+@media (max-width: 576px) {
+  #servicesSection h3 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #servicesSection h3 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 576px) {
+  #servicesSection h3 {
+    width: 80%;
+    text-align: center;
+    margin-left: 40px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #servicesSection h3 {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #servicesSection h3 {
+    width: 100%;
+    text-align: center;
+  }
+}
+#servicesSection .cards {
+  padding: 2% 2% 2% 2%;
+  background-color: rgb(0, 61, 84);
+}
+#servicesSection .cards img {
+  width: 100%;
+  height: 200px;
+}
+#servicesSection .cards h5 {
+  color: rgb(214, 122, 64);
+  font-family: "balooregular";
+  margin: 3% 0% 3% 0%;
+}
+#servicesSection .cards #cardsOrangeLine {
+  width: 90%;
+  height: 3px;
+  margin-bottom: 3%;
+  background-color: rgb(214, 122, 64);
+}
+#servicesSection .cards p {
+  width: 90%;
+  color: white;
+  font-family: "balooregular";
+}
+
+#dancingManSection {
+  padding: 8% 6% 8% 6%;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 576px) {
+  #dancingManSection {
+    padding: 8% 3% 8% 3%;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #dancingManSection {
+    padding: 8% 2% 5% 2%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #dancingManSection {
+    padding: 8% 2% 5% 2%;
+  }
+}
+@media (max-width: 576px) {
+  #dancingManSection {
+    text-align: center;
+  }
+}
+#dancingManSection #brandsAndProductsText h3 {
+  font-size: 45px;
+  font-family: "balooregular";
+  color: rgb(214, 122, 64);
+}
+@media (max-width: 576px) {
+  #dancingManSection #brandsAndProductsText h3 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #dancingManSection #brandsAndProductsText h3 {
+    font-size: 35px;
+  }
+}
+#dancingManSection #brandsAndProductsText button {
+  height: 60px;
+  background-color: rgb(0, 56, 79);
+  color: white;
+  font-size: 21px;
+  padding: 3% 7% 3% 7%;
+  border: none;
+  font-family: "balooregular";
+  margin-top: 3%;
+}
+#dancingManSection #dancingManImageContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 576px) {
+  #dancingManSection #dancingManImageContainer {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+#dancingManSection #dancingManImageContainer img {
+  width: 85%;
+  height: 85%;
+}
+
+#getInTouchSection {
+  padding: 8% 6% 0% 6%;
+  background-color: rgb(237, 238, 240);
+}
+#getInTouchSection .imageContainer {
+  width: 80%;
+  height: 700px;
+}
+@media (max-width: 576px) {
+  #getInTouchSection .imageContainer {
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #getInTouchSection .imageContainer {
+    width: 100%;
+    height: 620px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #getInTouchSection .imageContainer {
+    width: 100%;
+    height: 700px;
+  }
+}
+#getInTouchSection .imageContainer img {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 576px) {
+  #getInTouchSection .imageContainer img {
+    width: 80%;
+  }
+}
+#getInTouchSection #textAndFormContainer {
+  text-align: center;
+}
+#getInTouchSection #textAndFormContainer h3 {
+  font-size: 45px;
+  font-family: "balooregular";
+  color: rgb(214, 122, 64);
+}
+@media (max-width: 576px) {
+  #getInTouchSection #textAndFormContainer h3 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #getInTouchSection #textAndFormContainer h3 {
+    font-size: 35px;
+  }
+}
+#getInTouchSection #textAndFormContainer p {
+  font-size: 16px;
+  font-family: "balooregular";
+  color: rgb(0, 45, 70);
+}
+#getInTouchSection #textAndFormContainer form {
+  display: flex;
+  flex-direction: column;
+}
+#getInTouchSection #textAndFormContainer form input {
+  padding: 3% 0% 3% 2%;
+  margin-bottom: 2%;
+  border: none;
+}
+@media (max-width: 576px) {
+  #getInTouchSection #textAndFormContainer form input {
+    margin-bottom: 3%;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #getInTouchSection #textAndFormContainer form input {
+    margin-bottom: 3%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #getInTouchSection #textAndFormContainer form input {
+    margin-bottom: 3%;
+  }
+}
+#getInTouchSection #textAndFormContainer form input:focus {
+  outline: none;
+}
+#getInTouchSection #textAndFormContainer form textarea {
+  padding: 3% 0% 4% 2%;
+  margin-bottom: 2%;
+  border: none;
+}
+@media (max-width: 576px) {
+  #getInTouchSection #textAndFormContainer form textarea {
+    margin-bottom: 3%;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #getInTouchSection #textAndFormContainer form textarea {
+    margin-bottom: 3%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #getInTouchSection #textAndFormContainer form textarea {
+    margin-bottom: 3%;
+  }
+}
+#getInTouchSection #textAndFormContainer form textarea:focus {
+  outline: none;
+}
+#getInTouchSection #textAndFormContainer form button {
+  height: 60px;
+  background-color: rgb(0, 56, 79);
+  color: white;
+  font-size: 21px;
+  padding: 3% 7% 3% 7%;
+  border: none;
+  font-family: "balooregular";
+}
+@media (max-width: 576px) {
+  #getInTouchSection #textAndFormContainer form button {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #getInTouchSection #textAndFormContainer form button {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #getInTouchSection #textAndFormContainer form button {
+    margin-top: 3%;
+  }
+}
+
+#whiteDivision {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+}
+
+#blueBackImage {
+  padding: 8% 5% 5% 5%;
+  background-image: url("../Images/bilboard.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  color: white;
+}
+@media (max-width: 576px) {
+  #blueBackImage {
+    padding: 8% 3% 5% 3%;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #blueBackImage {
+    padding: 8% 2% 5% 2%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #blueBackImage {
+    padding: 8% 2% 5% 2%;
+  }
+}
+@media (max-width: 576px) {
+  #blueBackImage {
+    background-image: url("../Images/bgtop.png");
+    height: 850px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #blueBackImage {
+    background-position: right;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #blueBackImage {
+    background-position: right;
+  }
+}
+#blueBackImage h3 {
+  font-size: 45px;
+  font-family: "balooregular";
+}
+@media (max-width: 576px) {
+  #blueBackImage h3 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #blueBackImage h3 {
+    font-size: 35px;
+  }
+}
+@media (max-width: 576px) {
+  #blueBackImage h3 {
+    font-size: 40px;
+    margin-top: 65px;
+    margin-bottom: 70px;
+  }
+}
+#blueBackImage .textContainer {
+  width: 61%;
+}
+@media (max-width: 576px) {
+  #blueBackImage .textContainer {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) and (max-width: 576px) {
+  #blueBackImage .textContainer {
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  #blueBackImage .textContainer span {
+    display: none;
+  }
+}
+#blueBackImage .textContainer .iconAndTextContainers {
+  display: flex;
+}
+@media (max-width: 576px) {
+  #blueBackImage .textContainer .iconAndTextContainers {
+    justify-content: center;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #blueBackImage .textContainer .iconAndTextContainers {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #blueBackImage .textContainer .iconAndTextContainers {
+    margin-top: 30px;
+  }
+}
+#blueBackImage .textContainer .iconAndTextContainers i {
+  margin-right: 4%;
+}
+#blueBackImage .textContainer .iconAndTextContainers #address {
+  width: 40%;
+}
+@media (max-width: 768px) and (min-width: 577px) {
+  #blueBackImage .textContainer .iconAndTextContainers #address {
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  #blueBackImage .textContainer .iconAndTextContainers #address {
+    width: 60%;
+  }
+}
+#blueBackImage .textContainer .iconAndTextContainers p {
+  font-size: 16px;
+  font-family: "balooregular";
+}
+
+footer {
+  padding: 1% 0% 1% 0%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */

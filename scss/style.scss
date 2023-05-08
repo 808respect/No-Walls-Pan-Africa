@@ -1,0 +1,541 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@import "_mixins";
+
+// NAVIGATION-SECTION
+#navbar{
+    padding: 2% 3% 2% 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     @include mediaQuery(1024px, 769px){
+        padding: 2% 3% 2% 3%;
+     }
+    img{
+        @include mediaQuery(576px){
+            width: 180px;
+            height: 90px;
+        }
+        @include mediaQuery(1024px, 769px){
+            width: 250px;
+             height: 140px;
+        } 
+    }
+    ul{
+        display: flex;
+        @include mediaQuery(576px){
+            display: none;
+        }
+        @include mediaQuery(768px, 577px){
+            display: none;
+        }
+        li{
+            list-style: none;
+            &:hover{
+                background-color: rgb(0, 49, 66);
+                border-radius: 30px;
+            }
+            a{
+                text-decoration: none;
+                display: block;
+                padding: 40px;
+                font-family: 'balooregular';
+                font-size: 30px;
+                color: rgb(0, 49, 66);
+                &:hover{
+                        color: rgb(214, 122, 64);
+                }
+                 @include mediaQuery(1024px, 769px){
+                    padding: 25px;
+                } 
+            }
+        }
+    }
+}
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: rgb(0,0,0);
+    overflow-y: auto;
+    transition: 0.5s;
+    .closebtn {
+        position: absolute;
+        font-size: 40px;
+        right: 35px;
+        @include mediaQuery(768px, 577px){
+            font-size: 90px;
+        }  
+    }
+    li{
+        list-style: none;
+        &:hover{
+            background-color: rgb(0, 49, 66);
+            border-radius: 30px;
+            margin: 20px;
+            @include mediaQuery(768px, 577px){
+                margin-left: 120px;
+                margin-right: 120px;
+                border-radius: 50px;
+            }
+        }
+    }
+    a {
+        padding: 10px;
+        text-decoration: none;
+        font-size: 40px;
+        font-family: 'balooregular';
+        color:  rgb(0, 49, 66);
+        display: block;
+        transition: 0.9s;
+        @include mediaQuery(768px, 577px){
+            padding: 20px;
+            font-size: 60px;
+        }
+        &:hover{
+            color: rgb(214, 122, 64);
+        }
+    }
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        text-align: center;
+    }
+}
+.toggle-button{
+     position: absolute;
+    top: 38px;
+    right: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    @include mediaQuery(576px){
+         display: flex;
+    }
+    @include mediaQuery(768px, 577px){
+         top: 65px;
+         right: 70px;
+         display: flex;
+         width: 60px;
+         height: 40px;
+    }
+    .bar{
+         height: 5px;
+         width: 100%;
+         background-color: rgb(0, 49, 66);
+         border-radius: 12px;  
+         @include mediaQuery(768px, 577px){
+            height: 7px;
+         }
+    } 
+}
+
+// BILBOARD-SECTION 
+#bilboardSection{
+    padding: 2% 5% 0% 5%;
+    @include mediaQuery(768px, 577px){
+        padding: 2% 2% 5% 2%;
+    }
+    @include mediaQuery(1024px, 769px){
+        padding: 2% 2% 0% 2%;
+    } 
+    #bilboardTextContainer{
+        @include mediaQuery(576px){
+            text-align: center;
+        }
+        h1{
+            color: rgb(0, 49, 66);
+            font-size: 90px;
+            font-family: 'balooregular';
+            @include mediaQuery(576px){
+                font-size: 60px;
+                display: none;
+            }
+            @include mediaQuery(768px, 577px){
+                display: none;
+            }
+        }
+        h2{
+            color: rgb(0, 49, 66);
+            font-size: 50px;
+            font-family: 'balooregular';
+            @include mediaQuery(576px){
+                font-size: 40px;
+            }
+            span{
+                color: rgb(214, 122, 64);
+                font-size: 65px;
+                @include mediaQuery(576px){
+                    font-size: 50px;
+                }
+            }
+        }
+        #orangeLineAndText{
+            display: flex;
+            #bilboardOrangeLine{
+                width: 90px;
+                height: 3px;
+                background-color: rgb(214, 122, 64);
+                margin-top: 13px;
+                margin-right: 20px;
+                @include mediaQuery(576px){
+                    margin-left: 20px;
+                }
+            }
+            p{
+                font-size: 25px;
+                font-family: 'balooregular';
+                color: rgb(0, 49, 66);
+                @include mediaQuery(576px){
+                    font-size: 17px;
+                }
+            }
+        } 
+    }
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        align-items: flex-end;
+        -ms-flex-wrap: wrap; 
+        flex-wrap: wrap;
+        padding: 0 4px;
+        @include mediaQuery(576px){
+            display: none;
+        }
+        .column {
+            -ms-flex: 25%;
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+            @include mediaQuery(768px, 577px){
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 50%;
+            }
+            img {
+                margin-top: 8px;
+                vertical-align: middle;
+                width: 100%;
+            }
+        }
+    }
+    #fadeImageContainer{
+        width: 100%;
+        display: flex;
+        @include mediaQuery(576px){
+            display: none;
+        }
+        .ImageContainers{
+            width: 25%;
+            height: auto;
+            margin-top: 8px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+// CAROUSEL-IMAGES
+    .slideshow-container {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+        display: none;
+        @include mediaQuery(576px){
+            display: contents;
+        }
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+            img{
+                width: 100%;
+                height: 300px;
+            }
+            .dot {
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+                &.active {
+                    background-color: #717171;
+                }
+            }
+        }
+        @-webkit-keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }  
+    }
+}
+
+// PASSION-DRIVEN-SECTION
+#passionDrivenSection{
+    padding: 2% 5% 5% 5%;
+    @include centeringText();
+    @include mediaQuery(768px, 577px){
+        padding: 2% 2% 5% 2%;
+    }
+    @include mediaQuery(1024px, 769px){
+        padding: 2% 2% 5% 2%;
+    }
+    .textAndSpiralImage{
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: center;
+        h3{
+            @include H3();
+            color: rgb(214, 122, 64);
+            width: 90%;
+        }
+        p{
+            @include pText();
+            width: 95%;
+        }
+        #spiralImageContainer {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: flex-end;
+            img{
+                width: 90%;
+                height: 500px;
+                @include mediaQuery(576px){
+                    height: 400px;
+                    margin-bottom: 15px;
+                }
+                @include mediaQuery(768px, 577px){
+                    width: 90%;
+                    height: 380px;
+                }
+            }
+        } 
+    }
+}
+
+// SERVICES-SECTION
+#servicesSection{
+    background-color: rgb(0, 56, 79);
+    @include firstPadding();
+    h3{
+        @include H3(); 
+        width: 37%;
+        margin-bottom: 3%;
+        color: white;
+        @include mediaQuery(576px){
+            width: 80%;
+            text-align: center;
+            margin-left: 40px;
+        }
+        @include mediaQuery(768px, 577px){
+            width: 100%;
+            text-align: center;
+        }
+        @include mediaQuery(1024px, 769px){
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .cards{
+        @include cards();
+    }
+}
+
+// DANCING-MAN-SECTION
+#dancingManSection{
+    @include secondPadding();
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: space-between;
+    @include centeringText();
+    #brandsAndProductsText{
+        h3{
+            @include H3();
+            color: rgb(214, 122, 64);
+        }
+        button{
+            @include buttons();
+            margin-top: 3%;
+        }
+    } 
+    #dancingManImageContainer{
+        display: flex;
+        justify-content: flex-end;
+        @include mediaQuery(576px){
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        img{
+            width: 85%;
+            height: 85%;
+        }
+    }  
+}
+
+// GET-IN-TOUCH-SECTION
+#getInTouchSection{
+    padding: 8% 6% 0% 6%;
+    background-color: rgb(237, 238, 240);
+    .imageContainer{
+        width: 80%;
+        height: 700px;
+        @include mediaQuery(576px){
+            height: 450px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        @include mediaQuery(768px, 577px){
+            width: 100%;
+            height: 620px;
+        }
+        @include mediaQuery(1024px, 769px){
+            width: 100%;
+            height: 700px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            @include mediaQuery(576px){
+                width: 80%;
+            }
+        }
+    }
+    #textAndFormContainer{
+        text-align: center;
+        h3{
+            @include H3();
+            color: rgb(214, 122, 64);
+        }
+        p{
+            @include pText();
+            color: rgb(0, 45, 70);
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            input{
+                padding: 3% 0% 3% 2%;
+                @include formInputs();
+                &:focus{
+                    outline: none;
+                }
+            }
+            textarea{
+                padding: 3% 0% 4% 2%;
+                @include formInputs();
+                &:focus{
+                    outline: none;
+                }
+            }
+            button{
+                @include buttons();
+                @include mediaQuery(576px){
+                    margin-top: 20px;
+                }
+                @include mediaQuery(768px, 577px){
+                    margin-top: 10px;
+                }
+                @include mediaQuery(1024px, 769px){
+                    margin-top: 3%;
+                }
+            }
+        }
+    }  
+}
+#whiteDivision{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+} 
+
+// ADDRESS-CONTACT-SECTION
+#blueBackImage{
+    @include firstPadding();
+      background-image: url("../Images/bilboard.png");
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 400px;
+      color: white;
+      @include mediaQuery(576px){
+        background-image: url("../Images/bgtop.png");
+        height: 850px;
+      }
+      @include mediaQuery(768px, 577px){
+        background-position: right;
+      }
+      @include mediaQuery(1024px, 769px){
+        background-position: right;
+      }
+      h3{
+          @include H3();
+          @include mediaQuery(576px){
+            font-size: 40px;
+            margin-top: 65px;
+            margin-bottom: 70px;
+          } 
+        }
+      .textContainer{  
+          width: 61%;
+          @include mediaQuery(576px){
+               width: 100%;
+               @include centeringText();
+               span{
+                   display: none;
+               }
+          }
+          .iconAndTextContainers{
+                display: flex;
+                @include mediaQuery(576px){
+                    justify-content: center;
+                    margin-top: 40px;
+                }
+                @include mediaQuery(768px, 577px){
+                    margin-top: 30px;
+                }
+                 @include mediaQuery(1024px, 769px){
+                    margin-top: 30px;
+                }
+                i{
+                    margin-right: 4%;
+                }
+                #address{
+                    width: 40%;
+                    @include mediaQuery(768px, 577px){
+                        width: 100%
+                    }
+                     @include mediaQuery(1024px, 769px){
+                        width: 60%
+                    }
+                }
+                p{
+                    @include pText();
+                }
+           }   
+       }
+}
+
+//FOOTER-SECTION
+footer{
+    padding: 1% 0% 1% 0%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
